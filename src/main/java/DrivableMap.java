@@ -29,7 +29,7 @@ class DrivableMap {
      */
     public boolean addDriveable(String id, Drivable object) {
         if (this.drivable_map.get(id) == null) {
-            this.drivable_map.put(id, object);
+            drivable_map.put(id, object);
             return true;
         }
         return false;
@@ -43,7 +43,7 @@ class DrivableMap {
      * iterate through drivable_map.
      */
     public boolean hasFasterThan(int speed) {
-        for (Drivable item : this.drivable_map.values()) {
+        for (Drivable item : drivable_map.values()) {
             if (item.getMaxSpeed() >= speed) {
                 return true;
             }
