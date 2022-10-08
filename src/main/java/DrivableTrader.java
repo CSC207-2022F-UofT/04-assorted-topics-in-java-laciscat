@@ -19,14 +19,14 @@ public class DrivableTrader extends Trader<Drivable> {
     }
 
     public DrivableTrader(int money) {
-        super(money);
+        super(new ArrayList<Drivable>(), new ArrayList<Drivable>(), money);
     }
 
     public int getSellingPrice(Drivable object) {
         if (object instanceof Tradable) {
             return ((Tradable) object).getPrice() + object.getMaxSpeed();
+        } else {
+            return Tradable.MISSING_PRICE;
         }
-
-        return Tradable.MISSING_PRICE;
     }
 }
