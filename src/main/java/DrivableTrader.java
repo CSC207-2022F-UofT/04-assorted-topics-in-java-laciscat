@@ -22,6 +22,7 @@ public class DrivableTrader extends Trader<Drivable> {
         super(new ArrayList<Drivable>(), new ArrayList<Drivable>(), money);
     }
 
+    @Override
     public int getSellingPrice(Drivable object) {
         if (object instanceof Tradable) {
             return ((Tradable) object).getPrice() + object.getMaxSpeed();
