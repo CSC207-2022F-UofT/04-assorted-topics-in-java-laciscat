@@ -31,8 +31,9 @@ class DrivableMap {
         if (this.drivable_map.get(id) == null) {
             drivable_map.put(id, object);
             return true;
+        } else {
+            return false;
         }
-        return false;
     }
 
 
@@ -43,7 +44,7 @@ class DrivableMap {
      * iterate through drivable_map.
      */
     public boolean hasFasterThan(int speed) {
-        for (Drivable item : drivable_map.values()) {
+        for (Drivable item : this.drivable_map.values()) {
             if (item.getMaxSpeed() >= speed) {
                 return true;
             }
@@ -57,7 +58,7 @@ class DrivableMap {
      *       drivable_map.
      */
     public List<Tradable> getTradable() {
-        ArrayList<Tradable> tradableItems = new ArrayList<Tradable>();
+        ArrayList<Tradable> tradableItems = new ArrayList<>();
         for (Drivable item : this.drivable_map.values()) {
             if (item instanceof Tradable) {
                 tradableItems.add((Tradable) item);

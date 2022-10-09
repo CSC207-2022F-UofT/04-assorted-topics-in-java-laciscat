@@ -13,13 +13,26 @@
 import java.util.ArrayList;
 
 public class DrivableTrader extends Trader<Drivable> {
-
+    /**
+     * Construct a DrivableTrader, giving them the
+     * given inventory, wishlist, and money.
+     *
+     * @param inventory Objects in this Trader's inventory
+     * @param wishlist  Objects in this Trader's wishlist
+     * @param money     The Trader's money
+     */
     public DrivableTrader(ArrayList<Drivable> inventory, ArrayList<Drivable> wishlist, int money) {
         super(inventory, wishlist, money);
     }
 
+    /**
+     * Construct a DrivableTrader, giving them the
+     * given money and an empty wishlist and inventory.
+     *
+     * @param money The Trader's money
+     */
     public DrivableTrader(int money) {
-        super(new ArrayList<Drivable>(), new ArrayList<Drivable>(), money);
+        super(money);
     }
 
     @Override
